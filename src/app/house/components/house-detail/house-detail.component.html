@@ -1,0 +1,89 @@
+<div class="container">
+    <div class="card text-white bg-dark" *ngIf="house else loading">
+        <div class="card-header text-center" >
+           <h3>{{ house.name }}</h3>
+        </div>
+        <div class="card-body" >
+            <div class="box">
+                <div class="picture"><img src="./assets/photo/houses/houses.jpg"></div>
+                <div class="infos1">
+                        <p><span>region: </span>{{ house.region }}<br> </p>
+                        <p><span>coatOfArms: </span>{{ house.coatOfArms }}<br> </p>
+                        <p><span>words: </span>{{ house.words}}<br> </p>
+                        <p><span>founded: </span>{{ house.founded }}<br> </p>
+                        <p><span>founder: </span>{{ house.founder }}<br> </p>
+                        <p><span>diedOut: </span>{{ house.diedOut }}<br> </p>
+                </div>
+                <div class="infos2">
+
+                    <h4>CurrentLord</h4>
+                    <div class="list">
+                        <button
+                                (click)="goToCharacterDetail(house.currentLord)" type="button" class="btn btn-light">
+                                Lord of {{ house.name }} 
+                        </button>    
+                    </div>
+                    <hr>
+
+                    <h4>Titles</h4>
+                    <div class="list">
+                        <span *ngFor="let title of house.titles; index as i">
+                        {{ title }}
+                    </span>    
+                    </div>
+                    <hr>
+
+                    <h4>seats</h4>
+                    <div class="list">
+                        <span *ngFor="let seat of house.seats">
+                            {{ seat }}
+                         </span>    
+                    </div>
+                    <hr>
+
+                    <h4>ancestralWeapons</h4>
+                    <div class="list">
+                        <span *ngFor="let ancestralWeapon of house.ancestralWeapons ; index as i"
+                                type="button" class="btn btn-light">
+                                 {{ ancestralWeapons }}
+                        </span>    
+                    </div>
+                    <hr>
+
+                    <h4>cadetBranches</h4>
+                    <div class="list">
+                        <span *ngFor="let cadetBranche of house.cadetBranches"
+                            type="button" class="btn btn-light">
+                            {{ cadetBranches }}
+                        </span>    
+                    </div>
+                    <hr>
+
+                    <h4>swornMembers</h4>
+                    <div class="list">
+                        <span *ngFor="let swornMember of house.swornMembers ; index as i"
+                             (click)="goToCharacterDetail(swornMember)"
+                             type="button" class="btn btn-light">
+                             swornMember {{i+1}}
+                    </span>    
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="card-footer text-muted text-center">
+            Created By Adil Benmouny
+        </div>
+    </div>
+    <ng-template #loading>
+        <div class="text-center m-3">
+            <div class="spinner-grow text-primary pinner-grow-xl" role="status">
+              <span class="sr-only"></span>
+            </div>
+        </div>
+     </ng-template>
+</div>
+
+
+
+

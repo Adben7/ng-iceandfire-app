@@ -1,0 +1,87 @@
+<div class="container">
+    <div class="card text-white bg-dark" *ngIf="character else loading">
+        <div class="card-header text-center" >
+           <h3>{{ character.name }}</h3>
+        </div>
+        <div class="card-body" >
+            <div class="box">
+                <div class="picture"><img src="./assets/photo/persone.jpg"></div>
+                <div class="infos1">
+                        <p><span>gender: </span>{{ character.gender }}<br> </p>
+                        <p><span>culture: </span>{{ character.culture }}<br> </p>
+                        <p><span>born: </span>{{ character.born}}<br> </p>
+                        <p><span>died: </span>{{ character.died }}<br> </p>
+                        <p><span>father: </span>{{ character.father }}<br> </p>
+                        <p><span>mother: </span>{{ character.mother }}<br> </p>
+                </div>
+                <div class="infos2">
+                    <h4>Titles</h4>
+                    <div class="list">
+                        <span *ngFor="let title of character.titles; index as i">
+                            {{ title }}
+                    </span>    
+                    </div>
+                    <hr>
+
+                    <h4>Aliases</h4>
+                    <div class="list">
+                        <span *ngFor="let aliases of character.aliases">
+                            {{ aliases }}
+                         </span>    
+                    </div>
+                    <hr>
+
+                    <h4>Books</h4>
+                    <div class="list">
+                        <button *ngFor="let book of character.books ; index as i"
+                                (click)="goToCharacterDetail(book)" type="button" class="btn btn-light">
+                                Book {{i+1}}
+                        </button>    
+                    </div>
+                    <hr>
+
+                    <h4>PovBooks</h4>
+                    <div class="list">
+                        <button *ngFor="let povBook of character.povBooks"
+                            type="button" class="btn btn-light">
+                            {{ povBook }}
+                        </button>    
+                    </div>
+                    <hr>
+
+                    <h4>TvSeries</h4>
+                    <div class="list">
+                        <span *ngFor="let tvSerie of character.characters"
+                            type="button" class="btn btn-light">
+                            {{ tvSerie }}
+                    </span>    
+                    </div>
+                    <hr>
+
+                    <h4>PlayedBy</h4>
+                    <div class="list">
+                        <button *ngFor="let character of character.characters ; index as i"
+                            type="button" class="btn btn-light">
+                            Persone {{ character[i] }}
+                        </button>    
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="card-footer text-muted text-center">
+            Created By Adil Benmouny
+        </div>
+    </div>
+    <ng-template #loading>
+        <div class="text-center m-3">
+            <div class="spinner-grow text-primary pinner-grow-xl" role="status">
+              <span class="sr-only"></span>
+            </div>
+        </div>
+     </ng-template>
+</div>
+
+
+
+

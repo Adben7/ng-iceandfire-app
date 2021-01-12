@@ -1,0 +1,17 @@
+.container{
+    padding: 5%;
+}
+.boo-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+img{
+    height: 350px;
+}
+
+.card-body{
+    cursor: pointer;
+
+}

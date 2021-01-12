@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="card text-white bg-dark">
+        <div class="card-header">
+           <div class="title">
+            <h1>Houses</h1>
+           </div>
+            <div class="serch">
+                <app-serch (newfilterEvent)="filterList($event)"></app-serch>
+            </div>
+        </div>
+        <div class="card-body text-center">
+          <div class="boo-list">
+              <div  class="card mb-3 bg-secondary" style="width: 18rem;" 
+                    *ngFor="let house of filteredHouses"
+                    (click)="goToHouseDetail(house.url)"
+                >  
+                  <div class="card-body text-center" >
+                    <p class="card-text text-black">{{ house.name }}</p>
+                    <img src="./assets/photo/houses/house.jpg" class="card-img-top" alt="...">
+                  </div>
+              </div>
+          </div>  
+        </div>
+    </div>
+</div>
+    
