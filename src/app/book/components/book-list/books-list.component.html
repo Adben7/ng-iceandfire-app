@@ -10,9 +10,9 @@
     </div>
     <div class="card-body">
       <div class="boo-list">
-          <div  class="card mb-3 bg-secondary" style="width: 18rem;" 
+          <div  class="card mb-3 bg-d" style="width: 18rem;" 
               *ngFor="let book of filteredBooks"
-              (click)="goToBookDetail(book.url)"
+              (click)="goToDetail(book.url)"
               >  
               <div class="card-body text-center" >
                 <p class="card-text text-black">{{ book.name }}</p>

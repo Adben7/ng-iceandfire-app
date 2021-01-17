@@ -25,11 +25,11 @@ export class CharacterDetailComponent implements OnInit {
     );
   }
 
-  goToCharacterDetail(url: string){
+  goToDetail(url: string){
     let urlTab = url.split('/');
-    let bookId = urlTab[5];
-
-    this.router.navigate([`book/${bookId}`]);
+    let id = urlTab[5];
+    let resource = urlTab[4];
+    this.router.navigate([`${resource}/${id}`]);
   }
 
 }

@@ -21,25 +21,25 @@ export class BooksListComponent implements OnInit {
   ngOnInit(): void {
     this.bookService.getBooks()
     .pipe(take(1))
-    .subscribe(books =>{
-       this.books = books;
-       this.filteredBooks = books}
+    .subscribe(fetchedbooks =>{
+       this.books = fetchedbooks;
+       this.filteredBooks = fetchedbooks}
        );
   }
 
-  filterList(text: string):void {
+  filterList(value: string):void {
 
-    let listFilter = text.toLocaleLowerCase();
+    let listFilter = value.toLocaleLowerCase();
     console.log(listFilter);
 
     this.filteredBooks = this.books.filter(book =>
       book.name.toLocaleLowerCase().indexOf(listFilter) !== -1);
   }
 
-  goToBookDetail(url: string){
+  goToDetail(url: string){
     let urlTab = url.split('/');
-    let bookId = urlTab[5];
-
-    this.router.navigate([`book/${bookId}`]);
+    let id = urlTab[5];
+    let resource = urlTab[4];
+    this.router.navigate([`${resource}/${id}`]);
   }
 }

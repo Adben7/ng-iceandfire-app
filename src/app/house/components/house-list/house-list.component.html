@@ -10,13 +10,13 @@
         </div>
         <div class="card-body text-center">
           <div class="boo-list">
-              <div  class="card mb-3 bg-secondary" style="width: 18rem;" 
+              <div  class="card mb-3 bg-d" style="width: 18rem;" 
                     *ngFor="let house of filteredHouses"
-                    (click)="goToHouseDetail(house.url)"
+                    (click)="goToDetail(house.url)"
                 >  
                   <div class="card-body text-center" >
                     <p class="card-text text-black">{{ house.name }}</p>
-                    <img src="./assets/photo/houses/house.jpg" class="card-img-top" alt="...">
+                    <img src="./assets/photo/houses/house2.png" class="card-img-top" alt="...">
                   </div>
               </div>
           </div>  

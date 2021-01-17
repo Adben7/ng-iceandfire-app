@@ -34,7 +34,7 @@
                     <h4>Books</h4>
                     <div class="list">
                         <button *ngFor="let book of character.books ; index as i"
-                                (click)="goToCharacterDetail(book)" type="button" class="btn btn-light">
+                                (click)="goToDetail(book)" type="button" class="btn btn-light">
                                 Book {{i+1}}
                         </button>    
                     </div>

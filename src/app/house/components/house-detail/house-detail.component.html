@@ -19,7 +19,7 @@
                     <h4>CurrentLord</h4>
                     <div class="list">
                         <button
-                                (click)="goToCharacterDetail(house.currentLord)" type="button" class="btn btn-light">
+                                (click)="goToDetail(house.currentLord)" type="button" class="btn btn-light">
                                 Lord of {{ house.name }} 
                         </button>    
                     </div>
@@ -62,7 +62,7 @@
                     <h4>swornMembers</h4>
                     <div class="list">
                         <span *ngFor="let swornMember of house.swornMembers ; index as i"
-                             (click)="goToCharacterDetail(swornMember)"
+                             (click)="goToDetail(swornMember)"
                              type="button" class="btn btn-light">
                              swornMember {{i+1}}
                     </span>    

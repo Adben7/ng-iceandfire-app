@@ -37,10 +37,10 @@ export class CharacterListComponent implements OnInit {
       character.name.toLocaleLowerCase().indexOf(listFilter) !== -1);
   }
 
-  goToCharacterDetail(url: string){
+  goToDetail(url: string){
     let urlTab = url.split('/');
-    let characterId = urlTab[5];
-
-    this.router.navigate([`character/${characterId}`]);
+    let id = urlTab[5];
+    let resource = urlTab[4];
+    this.router.navigate([`${resource}/${id}`]);
   }
 }

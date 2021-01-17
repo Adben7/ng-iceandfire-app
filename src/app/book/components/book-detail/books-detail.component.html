@@ -18,7 +18,7 @@
                     <h4>PovCharacters</h4>
                     <div class="list">
                         <button *ngFor="let planet of book.povCharacters; index as i"
-                                (click)="goToPlanetsDetail(planet)" type="button" class="btn btn-light">
+                                (click)="goToDetail(planet)" type="button" class="btn btn-light">
                                 povCharacter {{i+1}}
                         </button>    
                     </div>
@@ -27,7 +27,7 @@
                     <h4>Characters</h4>
                     <div class="list">
                         <button *ngFor="let character of book.characters ; index as i"
-                                (click)="goToCharacterDetail(character)" type="button" class="btn btn-light">
+                                (click)="goToDetail(character)" type="button" class="btn btn-light">
                                 character {{i+1}}
                         </button>    
                     </div>
